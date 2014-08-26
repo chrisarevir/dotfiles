@@ -1,4 +1,6 @@
-call pathogen#infect('~/.vim/bundle/{}')
+execute pathogen#infect()
+
+set mouse=a
 
 " Basic Editting Config
 set nocompatible
@@ -93,7 +95,8 @@ map <C-l> <C-W>l
 
 " Use the arrows to something usefull
 map <right> :bn<cr>
-map <left> :bp<cr>
+map <left>  :bp<cr>
+map <down>  :bp<bar>sp<bar>bn<bar>bd<CR>
 
 " Control-C to return to Command Mode
 imap <c-c> <esc>
