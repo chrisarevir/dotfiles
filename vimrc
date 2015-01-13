@@ -1,16 +1,14 @@
 execute pathogen#infect()
 
-set mouse=a
-
 " Basic Editting Config
 set nocompatible
 " Allow unsaved background buffers and remember marks/undo for them
 set hidden
 set history=10000
 set expandtab
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set autoindent
 set laststatus=2
 set showmatch
@@ -22,7 +20,7 @@ set ignorecase smartcase
 set cursorline
 set ruler
 set number
-set cmdheight=2
+set cmdheight=1
 set switchbuf=useopen
 set numberwidth=6
 set showtabline=2
@@ -53,24 +51,6 @@ let mapleader = "\\"
 set mouse=a
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CUSTOM AUTOCMDS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-augroup vimrcEx
-" Jump to last cursor position unless it's invalid or in an event handler
-  autocmd!
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \ exe "normal g`\"" |
-        \ endif
-        
-    "for ruby, autoindent with two spaces, always expand tabs
-       autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber
-       set ai sw=2 sts=2 et
-   
-       autocmd BufRead, BufNewFile *.sass setfiletype sass
-       augroup END
-  
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=T
@@ -81,9 +61,6 @@ colorscheme molokai
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fast saving
-nmap <leader>w :w!<cr>
-
 " Switch back to previous file
 nnoremap <leader><leader> <c-^>
 
@@ -128,3 +105,30 @@ inoremap <s-tab> <c-n>
 set nobackup
 set nowb
 set noswapfile
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugin Configs
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vroom_detect_spec_helper = 1
+let g:vroom_use_spring = 1
+let g:vroom_use_binstubs = 1
+
+"let g:airline_powerline_fonts=1
+"let g:Powerline_symbols = 'fancy'
+
+let g:ctrlp_max_depth=40
+let g:ctrlp_max_file=0
+let g:ctrlp_max_height=50
+let g:ctrlp_working_path_mode = ''
+
+let g:vimrubocop_config = '.rubocop.yml'
+let g:vimrubocop_keymap = 0
+nmap <Leader>c :RuboCop<CR>
+nmap <Leader>p :NERDTreeToggle<CR>
+
+function WriteCreatingDirs()
+  execute ':silent !mkdir -p %:h'
+  write
+endfunction
+
+command W call WriteCreatingDirs()
