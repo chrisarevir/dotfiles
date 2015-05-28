@@ -1,0 +1,10 @@
+ag.vim
+ctrlp.vim
+nerdtree
+syntastic
+vim-airline
+vim-better-whitespace
+vim-fugitive
+vim-gitgutter
+vim-javascript
+vim-jsx
