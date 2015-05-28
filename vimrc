@@ -1,3 +1,4 @@
+~ cat .vimrc
 execute pathogen#infect()
 
 " Basic Editting Config
@@ -54,20 +55,35 @@ set mouse=a
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set guioptions-=T
-set t_Co=256 " 256 colors
+"set t_Co=256 " 256 colors
 set background=dark
-colorscheme molokai
+colorscheme flatcolor
+highlight clear SignColumn
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MOVING BLOCKS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Insert mode
+inoremap ∆ <ESC>:m .+1<CR>==gi
+inoremap ˚ <ESC>:m .-2<CR>==gi
+
+" Visual mode
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
+
+" Normal mode
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Switch back to previous file
-nnoremap <leader><leader> <c-^>
 
-" Smart way to move btw. windows
+" Smart way to move between windows
+map <C-h> <C-W>h
 map <C-j> <C-W>j
 map <C-k> <C-W>k
-map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Use the arrows to something usefull
@@ -75,14 +91,13 @@ map <right> :bn<cr>
 map <left>  :bp<cr>
 map <down>  :bp<bar>sp<bar>bn<bar>bd<CR>
 
-" Control-C to return to Command Mode
-imap <c-c> <esc>
 
 " Clear the search buffer when hitting return
 function! MapCR()
-    nnoremap <cr> :nohlsearch<cr>
-    endfunction
-    call MapCR()
+  nnoremap <cr> :nohlsearch<cr>
+endfunction
+call MapCR()
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -113,18 +128,30 @@ let g:vroom_detect_spec_helper = 1
 let g:vroom_use_spring = 1
 let g:vroom_use_binstubs = 1
 
-"let g:airline_powerline_fonts=1
-"let g:Powerline_symbols = 'fancy'
+let g:airline_powerline_fonts=1
+let g:Powerline_symbols = 'fancy'
 
 let g:ctrlp_max_depth=40
 let g:ctrlp_max_file=0
 let g:ctrlp_max_height=50
 let g:ctrlp_working_path_mode = ''
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:vimrubocop_config = '.rubocop.yml'
 let g:vimrubocop_keymap = 0
-nmap <Leader>c :RuboCop<CR>
+let g:airline#extensions#tabline#enabled = 1
+
+let g:syntastic_ruby_checkers           = ['rubocop']
+let g:syntastic_scss_checkers           = ['scss_lint']
+let g:syntastic_javascript_checkers     = ['jsxhint']
+let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
+"let g:syntastic_mode_map                = { 'mode': 'passive' }
+
+let g:jsx_ext_required = 0
+
+nmap <Leader>c :SyntasticCheck<CR>
 nmap <Leader>p :NERDTreeToggle<CR>
+nmap <Leader>b :Gblame<CR>
 
 function WriteCreatingDirs()
   execute ':silent !mkdir -p %:h'
