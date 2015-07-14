@@ -1,4 +1,3 @@
-~ cat .vimrc
 execute pathogen#infect()
 
 " Basic Editting Config
@@ -144,7 +143,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_ruby_checkers           = ['rubocop']
 let g:syntastic_scss_checkers           = ['scss_lint']
 let g:syntastic_javascript_checkers     = ['jsxhint']
-let g:syntastic_javascript_jsxhint_exec = 'jsx-jshint-wrapper'
 "let g:syntastic_mode_map                = { 'mode': 'passive' }
 
 let g:jsx_ext_required = 0
