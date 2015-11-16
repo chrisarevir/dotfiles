@@ -13,3 +13,6 @@ To install correctly, use the following steps to ensure maximum compatibility
   - ```ln -sf ~/.config-files/.vimrc ~/.vimrc```
   - ```ln -sf ~/.config-files/.zshrc ~/.zshrc```
 3. Fill out the .gitconfig file with your name and email!
+
+# Todo
+- Make automated script to run all the symlink stuff
