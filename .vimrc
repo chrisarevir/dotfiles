@@ -56,7 +56,8 @@ set mouse=a
 set guioptions-=T
 "set t_Co=256 " 256 colors
 set background=dark
-colorscheme flatcolor
+let g:flatcolor_asphaltbg=0
+color dracula
 highlight clear SignColumn
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -88,7 +89,7 @@ map <C-l> <C-W>l
 " Use the arrows to something usefull
 map <right> :bn<cr>
 map <left>  :bp<cr>
-map <down>  :bp<bar>sp<bar>bn<bar>bd<CR>
+"map <down>  :bp<bar>sp<bar>bn<bar>bd<CR>
 
 
 " Clear the search buffer when hitting return
@@ -130,11 +131,11 @@ let g:vroom_use_binstubs = 1
 let g:airline_powerline_fonts=1
 let g:Powerline_symbols = 'fancy'
 
-let g:ctrlp_max_depth=40
-let g:ctrlp_max_file=0
-let g:ctrlp_max_height=50
-let g:ctrlp_working_path_mode = ''
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"let g:ctrlp_max_depth=40
+"let g:ctrlp_max_file=0
+"let g:ctrlp_max_height=50
+"let g:ctrlp_working_path_mode = ''
+"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 let g:vimrubocop_config = '.rubocop.yml'
 let g:vimrubocop_keymap = 0
@@ -142,14 +143,22 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:syntastic_ruby_checkers           = ['rubocop']
 let g:syntastic_scss_checkers           = ['scss_lint']
-let g:syntastic_javascript_checkers     = ['jsxhint']
+let g:syntastic_javascript_checkers     = ['eslint']
 "let g:syntastic_mode_map                = { 'mode': 'passive' }
 
-let g:jsx_ext_required = 0
+"let g:jsx_ext_required = 0
 
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_quit_key='<Esc>'
+
+let g:fzf_layout = { 'down': '20%' }
+
+nmap <C-p> :FZF<CR>
 nmap <Leader>c :SyntasticCheck<CR>
 nmap <Leader>p :NERDTreeToggle<CR>
 nmap <Leader>b :Gblame<CR>
+nnoremap <C-z> :GundoToggle<CR>
 
 function WriteCreatingDirs()
   execute ':silent !mkdir -p %:h'
