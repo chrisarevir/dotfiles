@@ -1,1 +1,0 @@
-alias gg='git for-each-ref --count=10 --sort=-committerdate --format="%(refname:short)" refs/heads/'
