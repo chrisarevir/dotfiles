@@ -1,0 +1,55 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+  {
+    "key": "ctrl+cmd+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+down",
+    "command": "-editor.action.moveLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "ctrl+cmd+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "alt+up",
+    "command": "-editor.action.moveLinesUpAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+k cmd+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "workbench.action.nextEditor"
+  },
+  {
+    "key": "ctrl+shift+tab",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "cmd+\\",
+    "command": "-workbench.action.splitEditor"
+  },
+  {
+    "key": "cmd+r",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "ctrl+alt+v",
+    "command": "workbench.action.newGroupRight"
+  },
+  {
+    "key": "ctrl+alt+s",
+    "command": "workbench.action.newGroupBelow"
+  }
+]
