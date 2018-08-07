@@ -1,13 +1,15 @@
 {
-  "bracketPairColorizer.forceUniqueOpeningColor": true,
-  "editor.formatOnSave": true,
-  "editor.scrollBeyondLastLine": false,
-  "eslint.options": {
-    "configFile": "/Users/christian/.eslintrc"
-  },
-  "prettier.semi": true,
-  "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5",
-  "window.zoomLevel": 0,
-  "workbench.colorTheme": "One Dark Pro"
+    "bracketPairColorizer.forceUniqueOpeningColor": true,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "eslint.nodePath": "/Users/christian/.nvm/versions/node/v9.11.2",
+    "eslint.options": {
+        "configFile": "/Users/christian/.eslintrc",
+    },
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.trailingComma": "es5",
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "One Dark Pro",
 }
