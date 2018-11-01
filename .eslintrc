@@ -1,21 +1,33 @@
 {
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "globals": {
+    "CustomEvent": true,
+    "jasmine": true,
+    "node": true,
+    "Promise": true
+  },
+  "env": {
+    "amd": true,
+    "browser": true,
+    "jest": true,
+    "node": true
+  },
   "parser": "babel-eslint",
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "settings": {
-      "ecmascript": 6,
-      "jsx": true
-    },
-    "plugins": [
-      "react"
-    ],
-    "rules": {
-      "strict": 0,
-      "quotes": 0,
-      "no-unused-vars": 0,
-      "camelcase": 0,
-      "no-underscore-dangle": 0
-    }
+  "plugins": ["babel"],
+  "rules": {
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "singleQuote": true,
+        "semi": false,
+        "trailingComma": "es5"
+      }
+    ]
+  }
 }
