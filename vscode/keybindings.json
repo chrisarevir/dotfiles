@@ -41,6 +41,11 @@
     "command": "-workbench.action.splitEditor"
   },
   {
+    "key": "shift+cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol"
   },
