@@ -22,7 +22,7 @@
   },
   {
     "key": "cmd+k cmd+b",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "command": "workbench.files.action.focusFilesExplorer"
   },
   {
     "key": "cmd+t",
@@ -41,11 +41,6 @@
     "command": "-workbench.action.splitEditor"
   },
   {
-    "key": "shift+cmd+d",
-    "command": "editor.action.copyLinesDownAction",
-    "when": "editorTextFocus && !editorReadonly"
-  },
-  {
     "key": "cmd+r",
     "command": "workbench.action.gotoSymbol"
   },
@@ -56,5 +51,19 @@
   {
     "key": "ctrl+alt+s",
     "command": "workbench.action.newGroupBelow"
+  },
+  {
+    "key": "shift+cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "-editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorReadonly"
+  },
+  {
+    "key": "cmd+escape",
+    "command": "workbench.action.terminal.toggleTerminal"
   }
 ]
