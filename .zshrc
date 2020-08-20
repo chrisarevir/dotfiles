@@ -19,6 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias cat='bat'
 alias gg='git for-each-ref --count=10 --sort=-committerdate --format="%(refname:short)" refs/heads/'
+alias ip="ipconfig getifaddr en0"
 alias ls='colorls'
 
 ## asdf
